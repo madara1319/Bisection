@@ -14,6 +14,9 @@ int Bisection(double &x)
 	double upper_bnd=(x)/2;
 	while (upper_bnd>=lower_bnd)
 	{
+	if (!(std::cin>>x))
+		cout<<"Error entering a value\n"<<std::endl;
+	return -1;
 		double mid_val=(upper_bnd + lower_bnd)/2;
 		if (mid_val*mid_val>(x))
 		{
@@ -30,6 +33,10 @@ int Bisection(double &x)
 }
 int SquareRoot(double &x)
 {
+	if (!(std::cin>>x))
+		cout<<"Error entering a value\n"<<std::endl;
+	return -1;
+
 	if((x)>=0.0)
 	{
 		cout<<"\nSqrt("<< (x) << ") = " << std::sqrt((x)) <<std::endl;
@@ -42,6 +49,13 @@ int SquareRoot(double &x)
 		return 0;
 }
 
+//int Check(double &x)
+//{
+//	if (!(std::cin>>x))
+//		cout<<"Error entering a value\n"<<std::endl;
+//	return -1;
+//}
+
 
 int main()
 {
@@ -50,6 +64,7 @@ int main()
 	cout<<"Enter number you wann find square root of x = ";
 	std::cin>>x;
 	cout<<"\n"<<"The approximated value found using Bisection algorithm";
+//	int Chck=Check(x);
 	int Bi=Bisection(x);
 	cout<<"\n"<<"The exact value found using function sqrt";
 	int Sq=SquareRoot(x);
