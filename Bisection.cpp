@@ -5,6 +5,14 @@ using std::cout;
 
 //This code is supposed to find square root approximation using bisection algorithm
 
+void TypeCheck(double &x)
+{	
+	cout<<"The type of your input data is "<<typeof(x)<<std::endl;
+	return 0;
+}
+
+
+
 int Bisection(double &x)
 {	
 //	public double x={};
@@ -14,9 +22,10 @@ int Bisection(double &x)
 	double upper_bnd=(x)/2;
 	while (upper_bnd>=lower_bnd)
 	{
-	if (!(std::cin>>x))
-		cout<<"Error entering a value\n"<<std::endl;
-	return -1;
+	//if (!(std::cin>>x)){
+	//	cout<<"Error entering a value\n"<<std::endl;
+	//return -1;
+	//}
 		double mid_val=(upper_bnd + lower_bnd)/2;
 		if (mid_val*mid_val>(x))
 		{
@@ -33,10 +42,10 @@ int Bisection(double &x)
 }
 int SquareRoot(double &x)
 {
-	if (!(std::cin>>x))
-		cout<<"Error entering a value\n"<<std::endl;
-	return -1;
-
+//	if (!(std::cin>>x)){
+//		cout<<"Error entering a value\n"<<std::endl;
+//	return -1;
+//	}
 	if((x)>=0.0)
 	{
 		cout<<"\nSqrt("<< (x) << ") = " << std::sqrt((x)) <<std::endl;
@@ -63,6 +72,7 @@ int main()
 	cout<<"Welcome to Bisection Square Root finding little code snippet written to learn some C++"<<"\n";
 	cout<<"Enter number you wann find square root of x = ";
 	std::cin>>x;
+	cout<<TypeCheck(x)<<std::endl;
 	cout<<"\n"<<"The approximated value found using Bisection algorithm";
 //	int Chck=Check(x);
 	int Bi=Bisection(x);
